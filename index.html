@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <div class="header-content">
+        <h1><i class="fas fa-cloud-sun"></i> Weather Dashboard</h1>
+        <p class="sub">Search city • Use location • Current + 5-day forecast</p>
+      </div>
+    </header>
+
+    <section class="controls-container">
+      <div class="controls-wrapper">
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input id="cityInput" type="text" placeholder="Enter city (e.g., Pune)" />
+        </div>
+        <div class="button-group">
+          <button id="searchBtn" class="primary-btn">
+            <i class="fas fa-search"></i> Search
+          </button>
+          <button id="geoBtn" class="secondary-btn">
+            <i class="fas fa-location-crosshairs"></i> Location
+          </button>
+          <button id="unitBtn" class="unit-btn">
+            °F
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="status" class="status hidden"></section>
+
+    <section class="dashboard-grid">
+      <div class="hero-card glass">
+        <div class="card-header">
+          <h2><i class="fas fa-sun"></i> Current Weather</h2>
+          <div class="header-decoration"></div>
+        </div>
+        <div id="current" class="current-weather">
+          <div class="big">—</div>
+          <div class="meta">Search a city</div>
+        </div>
+      </div>
+
+      <div class="forecast-card glass">
+        <div class="card-header">
+          <h2><i class="fas fa-calendar-alt"></i> 5-Day Forecast</h2>
+        </div>
+        <div id="forecast" class="forecast-container"></div>
+      </div>
+
+      <div class="history-card glass">
+        <div class="history-header">
+          <div class="card-header">
+            <h2><i class="fas fa-history"></i> Recent Searches</h2>
+          </div>
+          <button id="clearHistoryBtn" class="clear-btn">
+            <i class="fas fa-trash"></i> Clear
+          </button>
+        </div>
+        <div id="history" class="history-container"></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <small><i class="fas fa-database"></i> Data by OpenWeather</small>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
